@@ -29,7 +29,7 @@ module "eks-cluster" {
   ]
 }
 
-resource "aws_security_group_rule" "" {
+resource "aws_security_group_rule" "bastion_ingress" {
   from_port                = 443
   to_port                  = 443
   protocol                 = "tcp"
