@@ -3,8 +3,12 @@ provider "aws" {
 
   assume_role {
     session_name = "terraform"
-    role_arn     = "arn:aws:iam::672499893721:role/svc_terraform"
+    role_arn     = "arn:aws:iam::${var.account_id}:role/svc_terraform"
   }
+}
+
+provider "kubernetes" {
+  load_config_file = true
 }
 
 terraform {
