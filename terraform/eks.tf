@@ -28,3 +28,12 @@ module "eks-cluster" {
     }
   ]
 }
+
+resource "aws_security_group_rule" "" {
+  from_port                = 443
+  to_port                  = 443
+  protocol                 = "tcp"
+  security_group_id        = module.eks-cluster.cluster_security_group_id
+  type                     = "ingress"
+  source_security_group_id = "${var.account_id}/sg-5e3a2519"
+}
