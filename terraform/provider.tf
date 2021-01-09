@@ -13,7 +13,7 @@ provider "kubernetes" {
 
 terraform {
   backend "s3" {
-    bucket = "tfstate-${var.account_id}"
+    bucket = "tfstate-672499893721"
     key    = "aetna-challenge"
     region = "us-east-1"
   }
