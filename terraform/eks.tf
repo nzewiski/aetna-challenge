@@ -5,6 +5,14 @@ module "eks-cluster" {
   subnets         = module.vpc.private_subnets
   vpc_id          = module.vpc.vpc_id
 
+  cluster_enabled_log_types = [
+    "api",
+    "audit",
+    "authenticator",
+    "controllerManager",
+    "scheduler"
+  ]
+
   worker_groups = [
     {
       instance_type = "m4.large"
