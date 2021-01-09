@@ -1,1 +1,3 @@
 windows_git_push.sh
+run_tf.sh
+terraform/.terraform*
