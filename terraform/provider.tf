@@ -3,6 +3,6 @@ provider "aws" {
 
   assume_role {
     session_name = "terraform"
-    role_arn = "arn:aws:iam::672499893721:role/svc_terraform"
+    role_arn     = "arn:aws:iam::672499893721:role/svc_terraform"
   }
 }
