@@ -9,7 +9,7 @@ module "eks-cluster" {
     {
       rolearn  = "arn:aws:iam::672499893721:role/SSMManagedInstanceCore"
       username = "Bastion"
-      groups   = "system:masters"
+      groups   = ["system:masters"]
     }
   ]
 
