@@ -6,9 +6,11 @@ module "eks-cluster" {
   vpc_id          = module.vpc.vpc_id
 
   map_roles = [
-    rolearn = "arn:aws:iam::672499893721:role/SSMManagedInstanceCore"
-    username = "Bastion"
-    groups = "system:masters"
+    {
+      rolearn  = "arn:aws:iam::672499893721:role/SSMManagedInstanceCore"
+      username = "Bastion"
+      groups   = "system:masters"
+    }
   ]
 
   cluster_enabled_log_types = [
