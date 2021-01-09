@@ -1,7 +1,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "challenge-vpc"
+  name = "challenge"
   cidr = "10.0.0.0/16"
 
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
@@ -12,7 +12,7 @@ module "vpc" {
   //  enable_vpn_gateway = true
 
   tags = {
-    Name = "challenge-vpc"
-    app  = "aetna-challenge"
+    Name      = "challenge"
+    ManagedBy = "terraform"
   }
 }
