@@ -7,9 +7,7 @@ provider "aws" {
   }
 }
 
-#provider "kubernetes" {
-#  load_config_file = true
-#}
+provider "kubernetes" {}
 
 terraform {
   backend "s3" {
