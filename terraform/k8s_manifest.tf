@@ -1,4 +1,5 @@
 resource "kubernetes_deployment" "nginx_deployment" {
+  depends_on = [module.eks-cluster]
   metadata {
     name = "nginx"
     labels = {
@@ -47,6 +48,7 @@ resource "kubernetes_deployment" "nginx_deployment" {
 }
 
 resource "kubernetes_service" "nginx_service" {
+  depends_on = [module.eks-cluster]
   metadata {
     name = "nginx-service"
     labels = {
