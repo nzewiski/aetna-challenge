@@ -56,12 +56,12 @@ resource "kubernetes_service" "nginx_service" {
   spec {
     type = "NodePort"
     selector = {
-      app = kubernetes_deployment.nginx_deployment.metadata.0.labels.app
+      app = kubernetes_deployment.nginx_deployment.metadata[0].labels.app
     }
     port {
       protocol    = "TCP"
       port        = 8080
-      target_port = kubernetes_deployment.nginx_deployment.spec.0.template.spec.0.container.liveness_probe.http_get.port
+      target_port = kubernetes_deployment.nginx_deployment.spec[0].template[0].spec[0].container[0].liveness_probe[0].http_get[0].port
     }
   }
 }
